@@ -22,7 +22,7 @@ That's all — after doing so you could go at your generated pages — replace t
 
 If you'd like to preview the changes or compile it locally, so you'd have static HTML of your slides (and you could access them without an internet access), you should clone this repo (or a fork) locally:
 
-    git clone --recursive git://github.com/shower/jekyller.git
+    git clone --recursive git://github.com/sc5/jekyller.git
     
 Note that you'll need either to use the `--recursive` flag, 'cause there are submodules to fetch, or you'll need to use `git submodule init && git submodule update` in order to fetch them manually if you didn't use this flag.
 
