@@ -13,9 +13,9 @@ author:
     name: Yours Truly
     # url:  http://example.com/
     company:
-        name: Famous Inc.
-        # url:  http://example.com/
+        name: SC5 Online
+        url:  http://sc5.io/
 
-fork_url: https://github.com/shower/shower
+fork_url: https://github.com/SC5/jekyller
 progress: true
 line_numbers: true
