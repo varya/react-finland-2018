@@ -1,6 +1,6 @@
 ---
 
-layout: bright
+layout: sc5
 
 style: |
 

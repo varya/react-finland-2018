@@ -1,8 +1,8 @@
 ---
 
-layout: bright
+layout: sc5
 
-permalink: bright.html
+permalink: sc5.html
 
 ---
 
@@ -20,12 +20,12 @@ Typewriter etsy messenger bag [fingerstache](#x), aesthetic vinyl semiotics twee
 
 ## Header
 
-DIY beard locavore occupy salvia, whatever single-origin coffee fanny pack 3 wolf moon typewriter gastropub kale chips. Ennui keffiyeh thundercats jean shorts biodiesel.
+Thundercats ennui messenger bag, squid carles chillwave shoreditch pickled cliche letterpress. DIY beard locavore occupy salvia, whatever single-origin coffee fanny pack 3 wolf moon typewriter gastropub kale chips. Ennui keffiyeh thundercats jean shorts biodiesel. Terry richardson, swag blog locavore umami vegan helvetica. Fingerstache kale chips.
 
-Typewriter etsy messenger bag fingerstache, aesthetic vinyl semiotics twee DIY forage chillwave. Thundercats ennui messenger bag, squid carles chillwave shoreditch pickled cliche letterpress.
+Typewriter etsy messenger bag fingerstache.
+{: .note }
 
 // DIY beard locavore occupy salvia, whatever single-origin coffee fanny pack 3 wolf moon typewriter gastropub kale chips. Ennui keffiyeh thundercats jean shorts biodiesel.
-
 
 ## Lists in English typography
 
@@ -55,7 +55,6 @@ Typewriter etsy messenger bag fingerstache, aesthetic vinyl semiotics twee DIY f
 - Locavore umami vegan helvetica
 - Fingerstache kale chips
 - Keytar sriracha gluten-free
-
 1. Ennui keffiyeh thundercats
 2. Jean shorts biodiesel
 3. Terry richardson, swag blog
@@ -110,11 +109,11 @@ Typewriter etsy messenger bag fingerstache.
 
 // Typewriter etsy messenger bag fingerstache.
 
-## Sliding Right
-{: .slide .shout .right }
+## Growing shout
+{: .slide .shout .grow }
 
-## Sliding Up
-{: .slide .shout .up }
+## Shrinking shoud
+{: .slide .shout .shrink }
 
 ## ![](themes/bright/pictures/exact.png)
 {: .slide .cover }

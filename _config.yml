@@ -4,10 +4,10 @@ highlighter: pygments
 permalink: /:title.html
 relative_permalinks: false
 
-default_theme: ribbon
+default_theme: sc5
 default_width: 792
 default_lang: en
-default_body_class: list
+default_body_class: shower list
 
 author:
     name: Yours Truly
