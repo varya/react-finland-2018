@@ -12,12 +12,533 @@ style: |
       color: yellow;
       margin-top: 70px;
     }
+
+    .no-title h2 {
+      display: none;
+    }
 ---
 
-# SC5 brand presentation with jekyller {#cover}
+# Component development with CSS in 2017 {#cover}
 
-Maija Meikäläinen, <span class="position">Chief Style Officer</span>
+Varya Stepanova, <span class="position">Senior Software Specialist at SC5 Online</span>
 {:.author}
+
+
+## Me
+{: .no-title }
+
+### Now
+Senior Software Specialist at SC5 Online
+
+### Before
+TMG (Amsterdam, the Netherlands); Yandex&nbsp;(Moscow,&nbsp;Russia)
+
+### Area of expertise
+Components on the web: design systems, pattern libraries, SGDD, BEM. Techs: CSS, JavaScript, etc.
+
+<!--
+Before we start, I would like to introduce myself and explain why
+this topic has been chosen.
+-->
+
+
+## Spoiler
+
+* Industry challenges when developing CSS
+* Today's solutions for components on the web
+* Web Components and the future of CSS
+* Style Guide Driven Development
+
+<!--
+This is what I'm going to show today
+  https://www.styled-components.com/
+  https://vuejs.org/v2/guide/single-file-components.html#For-Users-New-to-Module-Build-Systems-in-JavaScript
+  CSS modules
+  CSS-in-JS
+
+  https://speakerdeck.com/okonet/modular-css-v2-css-in-js-edition
+-->
+
+
+## CSS
+
+> *Cascading Style Sheets* (CSS) is a style sheet language used for describing the look and formatting of a document
+> written in a markup language. <cite>[Wikipedia](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)</cite>
+
+First published in 1996
+{: .note}
+
+<!--
+The meaty part of the lecture is about CSS.
+Are you familiar with this technology?
+
+CSS is used to style web documents. CSS rules can be matched to DOM nodes and bring them view which
+is descriped with CSS properties.
+
+This concept is pretty old. CSS was first introduced in 1996. And nothing conceptually has been changed since then.
+However the web now is far more complex than in 1996, so in industry we are facing the chalelngies and need a way to
+overcome.
+-->
+
+
+## Industry challenges
+{: .no-title }
+
+![](pictures/homepage.png)
+
+<!--
+In this picture you can see how the web pages used to look like. And from the architectural point of view they were
+similar. The industry just did not have experience back then to provide recommendations how to build the we good.
+
+Now things have already changed. Today, if you are developing not you cat's homepage but a serious website, it should
+meet the requirements.
+-->
+
+
+## Bulletproof Web Desing
+{: .bulletproof .no-title }
+
+<!--
+This problem was first spoken out loud by this gentelman. His name is Dan Cederholm and he is the author of the book
+shown. The "Bulletproof Web Design" is a first place where the inductry needs were explained.
+In was first published in 2005 and has 2 more editions since then. However this is quite mature book, I still recommend
+it if you want to step in the industry level of creating web sites.
+He first said that the HTML/CSS markup we produce should be stable. It should be maitainable meaning not very sensetive
+to the providing changes.
+So, it's not like single action - provide the code and forget about it. A developer will get back to their code to fix
+something. Other developers will bring their changes into the code. And nothing should be broken in unexpected places.
+-->
+
+<style>
+.bulletproof {
+  background-image:
+    url('pictures/bulletproof.jpg'),
+    url('pictures/dan-cederholm.jpg');
+  background-position: top right, -120px 0;
+  background-size: auto, 100%;
+  background-repeat: no-repeat;
+}
+</style>
+
+
+## Big CSS
+
+* massive sites
+* big teams of developers
+* heavy UI
+* long running projects
+
+<!--
+massive sites: A lot of code, thousands of lines
+big teams of developers: up to hundreds of ppl, teams can grow and change
+heavy UI: each piece of interface has a lot of code and logic behind
+long running project: need to be maintainable
+-->
+
+
+## Massive web sites
+
+* Thousands of lines of code
+* A lot of files
+* Many pages
+{: }
+
+* A lot of websites with common codebase
+* Common corporate style
+
+<!--
+You cannot check all the pages visially for every change, so your code should be written the way which
+makes it possible to predict.
+
+A lot of websites with common codebase: repeating would be too expensive.
+-->
+
+
+## Big teams
+
+* Hundreds of developers
+* Growing teams
+* Changing the context
+
+<!--
+Hundreds of people.
+Developers need common approaches.
+Communication matters.
+-->
+
+
+## Heavy UI
+{: .heavy-ui .no-title }
+
+<!--
+This login form in the middle does not look as a massive component.
+Just 2 inputs, checkbox, button.
+Guess how much code is needed to represent it?
+-->
+
+<style>
+.heavy-ui:before {
+  display: block;
+  content: '';
+  background-image: url(pictures/domik.png);
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+</style>
+
+
+## Heavy UI
+{: .heavy-ui-code .no-title }
+
+    <form class="b-mail-domik g-js" method="post" action="https://passport.yandex.com/passport?mode=auth&amp;from=mail&amp;origin=hostroot_com_nol_enter&amp;retpath=https%3A%2F%2Fmail.yandex.com">
+      <i class="b-mail-domik__roof"></i>
+      <table class="b-mail-domik__shadow">
+        <tbody>
+          <tr>
+            <td class="b-mail-domik__shadow__lt">&nbsp;</td>
+            <td class="b-mail-domik__shadow__t"></td>
+            <td class="b-mail-domik__shadow__rt">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="b-mail-domik__shadow__l">&nbsp;</td>
+            <td class="b-mail-domik__shadow__m">
+              <div class="b-mail-domik__form">
+                <div class="b-mail-domik__username">
+                  <label class="b-hint-input g-js" for="b-mail-domik-username11" style="display: block;">username</label>
+                  <div class="b-input"><input tabindex="1" name="login" id="b-mail-domik-username11" class="b-input__text" autocapitalize="off" autocorrect="off" aria-label="username"></div>
+                </div>
+                <div class="b-mail-domik__password">
+                  <label class="b-hint-input g-js" for="b-mail-domik-password11">password</label>
+                  <div class="b-input"><input type="password" tabindex="2" name="passwd" id="b-mail-domik-password11" class="b-input__text" aria-label="password"></div>
+                </div>
+                <div class="b-mail-domik__permanent"><input type="hidden" name="twoweeks" value="yes"><input type="checkbox" tabindex="3" id="b-mail-domik-permament11" class="b-mail-domik__check">&nbsp;<label for="b-mail-domik-permament11">don't remember me</label></div>
+                <div class="b-mail-domik__button b-mail-domik__button_qr"><span class="b-mail-button b-mail-button_default b-mail-button_button b-mail-button_grey-26px b-mail-button_26px b-mail-button_lead"><span class="b-mail-button__inner"><span class="b-mail-button__text">Log in</span></span><input type="submit" tabindex="4" class="b-mail-button__button" value="Log in"></span><a href="https://passport.yandex.com/auth/?mode=qr&amp;retpath=https%3A%2F%2Fmail.yandex.com" class="js-button-qr b-mail-button b-mail-button_default b-mail-button_button b-mail-button_grey-26px b-mail-button_26px b-mail-button_dependent"><span class="b-mail-button__inner"><span class="b-mail-button__ico b-mail-button__ico_qr"></span></span></a></div>
+                <div class="b-mail-domik__remember"><a tabindex="5" class="b-mail-domik__remind js-count-click" href="https://passport.yandex.com/passport?mode=restore" data-metrika="Клики на 'Вспомнить пароль'" data-paranja="check">Forgot your password?</a></div>
+                <div class="b-mail-domik__social"><a class="b-mail-domik__social-link js-social-link" data-provider="fb"><i class="b-mail-domik__social-icon b-mail-domik__social-icon_provider_fb"></i></a><a class="b-mail-domik__social-link js-social-link" data-provider="tw"><i class="b-mail-domik__social-icon b-mail-domik__social-icon_provider_tw"></i></a><a class="b-mail-domik__social-link js-social-link" data-provider="gg"><i class="b-mail-domik__social-icon b-mail-domik__social-icon_provider_gg"></i></a></div>
+              </div>
+            </td>
+            <td class="b-mail-domik__shadow__r">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="b-mail-domik__shadow__lb">&nbsp;</td>
+            <td class="b-mail-domik__shadow__b"></td>
+            <td class="b-mail-domik__shadow__rb">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="antivirus js-antivirus">Yandex.Mail has <a href="http://www.drweb.com/" target="_blank"></a> virus protection</div>
+    </form>
+
+<!--
+So, this is HTML.
+And almost every node here needs CSS. Not one property but many.
+-->
+
+<style>
+.heavy-ui-code pre code {
+  font-size: 7px;
+}
+</style>
+
+
+## Long running projects
+
+* Code lives for years
+* Continious development
+
+<!--
+In the web development you cannot create version 2, we provide changes little by little
+So, the code should be maintainable for years
+-->
+
+
+## Where CSS is hard?
+{: .slide--shout .slide--red }
+
+
+## Is this good?
+
+    H1 { color: blue }
+    P EM { font-weight: bold }
+    A:link IMG { border: 2px solid blue }
+    A:visited IMG { border: 2px solid red }
+    A:active IMG { border: 2px solid lime }
+
+<!--
+Now look at this code. Do you see something strange? Any guess?
+Who would write their CSS like this?
+
+The problem is that CSS was created to make text bold and links underlined. It ideally suited
+solving these problems. In many websites developers still use CSS like.
+
+Actually this code from [CSS level 1 specification](http://www.w3.org/TR/CSS1/). It is
+very simple, was recommended in 1996. Time passed and we met new chalenges.
+-->
+
+
+## What makes CSS hard?
+
+* Vertical centering
+* Equal height columns
+* Browser inconsistencies
+* Unobvious tricks
+{: .next }
+
+<!--
+Before we decide what is wrong with that peice, let's guess what is hard in CSS.
+
+When ppl are asked, the repson is usually
+- vertical centing
+- making columns of equial height
+- browers render CSS differently, so it takes special knowledge and work to make the interface consistent
+- many solutions are unobvious tricks which needed to be memorized
+
+But this is not true, this is easy or at least clear how to manage. You can google for all this questions.
+-->
+
+
+## What <b>really</b> makes CSS hard?
+
+* Scoping
+* Specificity conflicts
+* Non-deterministic matches
+* Dependency management
+* Removing unused code
+
+<!--
+The real hard problems of CSS are here:
+- No scoping. Everything is CSS is global.
+- Specificity conflicts. I'll explain in detal later.
+- Non-deterministic matches which naturally result from declarativeness of CSS language
+- Dependency management
+- Removing unused code
+-->
+
+
+## CSS has no scoping
+
+    a { /* Affects all the links */
+      color: red;
+    }
+    ul li a { /* Affects all the links in lists */
+      color: green;
+    }
+
+<!--
+This especially maters if you link third-party CSS.
+A common problem for developing libraries or code which will be later delivered to another web site.
+Everything in CSS is global, and writing good CSS is similar to writing a good program module if you only allowed to use
+global variables.
+This can be mixed with another CSS and applied to wrong nodes.
+Writing good CSS means you has to predict the future.
+-->
+
+
+## Specificity
+
+> Specificity is the means by which a browser decides which property values are the most relevant to an element and gets
+> to be applied. Specificity is only based on the matching rules which are composed of selectors of different sorts.
+
+<!--
+Another problem is specificity.
+Who remember what specificity is?
+Ok, I will explain.
+-->
+
+
+## The most specific matters
+
+    <div id="test">
+      <span>Text</span>
+    </div>
+
+<separator/>
+
+    div#test span { color: green }
+    span { color: red }
+    div span { color: blue }
+
+<!--
+If a brower has 2, 3 or more rules which match the same DOM node, how it decides what are the properties to take into
+work?
+The order does not matter.
+For every selector a browser calculates how important this set of rules is. The rule with the more specific selector
+would be prioritized.
+So, here we see...
+-->
+
+
+## How to overwrite?
+
+    <div class="sidebar">Left floated sidebar</div>
+
+<separator/>
+
+    .sidebar { /* Does it redefine `div.sidebar`?! */
+      float: right;
+    }
+{: .next }
+
+<separator/>
+
+    body .sidebar { /* Overwrites 'div.sidebar {}' */
+      float: right;
+    }
+{: .next }
+
+<!--
+When it comes to developments, specificity matters when redefining pre-given
+components.
+
+To redefine the left-floated sidebar, we would overwrite the rule.
+-->
+
+
+## Specificity hell
+{: .no-title }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #999;
+    }
+
+    #home-menu-container #home-menu li a {
+      color: red;
+    }
+
+    body #home-menu ul li a {
+      color: blue !important;
+    }
+
+<!--
+People ask on Stackoverflow how to overwrite Bootsrtap
+These things can be in different files
+-->
+
+
+## Non-deterministic matches
+
+    #content div div {
+      float: left;
+    }
+
+<!-- This can be matched to anything -->
+<!-- You cannot rely on the document structure, because it contantly changes while developing -->
+<!-- в момент, когда ты пишешь, ты указываешь признаки нод, на которые сматчится правило, а не точный адрес. смотри:
+можно писать адрес «Rettigweg 1, 13187 Berlin", а можно «около Wollankstrasse такая боковая улица с тремя домами, и
+там есть такой желтый дом, и там на втором этаже ещё балконы металлические с узорами» -->
+
+
+## Dependency management
+{: .dependency-management }
+
+### No dependencies, sorry
+
+<div class="next" markdown="1">
+### But what about?
+
+    @import url('i-need-this.css');
+</div>
+
+### No, sorry again.
+{: .next .sorry }
+
+<!--
+CSS was not developed as a programming language and now it still isn't. So, there is no way to declare that
+one piece of CSS needs anotehr one.
+OK, there is import. But this is not  aproduction solution. And assuming undeterministic matches we cannot rely on it.
+-->
+
+<style>
+.dependency-management h3 {
+  padding-top: 1em;
+  margin-bottom: 0.5em;
+}
+.dependency-management .sorry
+{
+  color: green;
+}
+</style>
+
+
+## Removing unused code
+
+100 pages in projects
+
+    .person div a {
+      color: pink;
+    }
+
+Can I remove it? Will it break something? Maybe it is for a third-party HTML code?
+
+<!--
+CSS is declarative, so you cannot say what are the nodes the rules will aply to.
+If you have a lot of pages you cannot remove a piece of CSS and check visually if something is broken.
+Even worse with  dynamic web sites.
+-->
+
+
+## Where CSS is hard?
+{: .no-title .hard-css }
+
+<table><thead>
+
+<th markdown="1">
+
+This is not hard in CSS
+
+</th>
+
+<th markdown="1">
+
+This is!
+
+</th>
+
+</thead><tr>
+
+<td markdown="1">
+
+    #sidebar ul li a {
+      <mark>color: red;</mark>
+      <mark>display: block;</mark>
+      <mark>padding: 1em;</mark>
+    }
+
+</td>
+
+<td markdown="1">
+
+    <mark>#sidebar ul li a</mark> {
+      color: red;
+      display: block;
+      padding: 1em;
+    }
+
+</td>
+
+</tr></table>
+
+*How do we architect encapsulated components?*
+{: .next }
+
+<!--
+Writing CSS is easy. It is very easy to read and it is very likely that you can
+find the tricks you need at Stackoverflow. But architechting CSS is very difficult.
+
+We need a way to architect independent encapsulated components.
+Being put into any place on the page, the components should not break anything. Also, it should not be broken
+itself.
+-->
+
+<style>
+.hard-css em {
+  font-size: 30px;
+}
+</style>
 
 
 ## Where am i?
