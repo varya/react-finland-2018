@@ -571,7 +571,7 @@ itself.
 * Technology
 
 
-## Web Components
+## Standards
 {: .slide--shout .slide--azure }
 
 <!--
@@ -596,7 +596,7 @@ a new technology, a new standard which will hopefully solve the problems we cons
 </style>
 
 
-## Technologies behind
+## Web Components
 {: .wc-behind }
 
 <div class="wc-logo"></div>
@@ -1309,6 +1309,17 @@ our own way and recomendations how to use it.
 But the reason of the need to use the metholodogy is drawbacks of CSS. And the right
 way would be to fix the problems itself.
 -->
+
+
+## Technology
+{: .slide--shout .slide--azure }
+
+
+## Modular CSS
+
+* CSS-modules
+* CSS-in-JS (JSS)
+* Styled Components
 
 
 ## Where am i?
