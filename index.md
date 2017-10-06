@@ -110,6 +110,7 @@ something. Other developers will bring their changes into the code. And nothing 
 -->
 
 <style>
+.shower.list .bulletproof,
 .bulletproof {
   background-image:
     url('pictures/bulletproof.jpg'),
@@ -258,6 +259,12 @@ So, the code should be maintainable for years
 
 ## Where CSS is hard?
 {: .slide--shout .slide--red }
+
+
+## Building meme
+{: .no-title .slide--full-image }
+
+![](pictures/css1.jpg)
 
 
 ## Is this good?
@@ -419,6 +426,12 @@ These things can be in different files
 -->
 
 
+## Family guy meme
+{: .no-title .slide--full-image }
+
+![](pictures/css2.gif)
+
+
 ## Non-deterministic matches
 
     #content div div {
@@ -430,6 +443,12 @@ These things can be in different files
 <!-- в момент, когда ты пишешь, ты указываешь признаки нод, на которые сматчится правило, а не точный адрес. смотри:
 можно писать адрес «Rettigweg 1, 13187 Berlin", а можно «около Wollankstrasse такая боковая улица с тремя домами, и
 там есть такой желтый дом, и там на втором этаже ещё балконы металлические с узорами» -->
+
+
+## Doctor meme
+{: .no-title .slide--full-image }
+
+![](pictures/css3.gif)
 
 
 ## Dependency management
@@ -539,6 +558,757 @@ itself.
   font-size: 30px;
 }
 </style>
+
+
+## Dealing with CSS
+{: .slide--shout .slide--red }
+
+
+## Ways out
+
+* Standards
+* Methodology
+* Technology
+
+
+## Web Components
+{: .slide--shout .slide--azure }
+
+<!--
+Here I introduce you a concept called Web Components. This is not the methodology but
+a new technology, a new standard which will hopefully solve the problems we considered.
+-->
+
+## W3C
+{: .no-title .w3c }
+
+<style>
+
+.shower.list .w3c,
+.w3c {
+  position: relative;
+  background-image: url(pictures/w3c.png);
+  background-size: auto 640px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+</style>
+
+
+## Technologies behind
+{: .wc-behind }
+
+<div class="wc-logo"></div>
+
+* Shadow DOM
+* Custom Elements
+* HTML Templates
+* HTML Imports
+
+<!--
+Web Components is not another language but some additions into already existing standards.
+So, the additionas are:
+- shadow DOM
+- Custom elements in HTML
+- HTML templates
+- HTML Imports
+
+I will show you in code what it all means.
+-->
+
+<style>
+
+.wc-behind .wc-logo {
+  display: block;
+  float: right;
+  width: 200px;
+  height: 200px;
+  margin-right: 200px;
+  background-image:url('pictures/webcomponents.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+</style>
+
+
+## Web Components
+
+* [Navite component](demo/video.html)
+* [Custom web component](demo/custom-button.html)
+* [Templates](demo/templates.html)
+* [HTML import](demo/html-import.html)
+
+<!--
+These are a few pages I prepared for the lecture which demonstrate the concept.
+Let's take a look into them one by one.
+
+1. Video page
+Open code
+Inspect element
+Switch on Shadow DOM
+Shadow DOM is DOM behind the component. Video is native component.
+
+2. Custom web component
+We can write our own components.
+HTML is just <my-button>
+In Shadow DOM we can see more compex structure.
+This is because we can tech the browser to deal with our custom component. This teaching
+goes with JavaScript.
+Take into account that styles are encapsulated.
+
+3. Templates
+Easier than describe everything in JavaScript
+
+4. HTML imports
+Everything about one components can be detached into an HTML file and then linked to the page.
+
+-->
+
+
+## HTML import, library
+
+    <!-- Import element -->
+    <link rel="import" href="my-lib/google-map.html">
+
+    <!-- Use element -->
+    <google-map lat="37.790" long="-122.390"></google-map>
+
+<!--
+With HTML imports you can create your own components and use them across different websites.
+Or you can use someone else's components as a library.
+-->
+
+
+## Web Components Status Quo
+{: .componentized }
+
+![](pictures/componentized.png)
+
+<!--
+The concept is new and not all the browsers support.
+-->
+
+<style>
+
+.componentized img {
+  width: 100%;
+}
+
+</style>
+
+
+## Web Components Polyfills
+{: .wc-polyfills }
+
+* [WebComponents.org](http://webcomponents.org/)
+* [X-Tag](http://www.x-tags.org/)
+
+<!--
+However we can live with Polyfills.
+These are JavaScript additions which "teach" a browser to emulate the work of Web Components.
+Add such a sript onto your page and you will be sure that the components work.
+-->
+
+<style>
+
+.wc-polyfills ul li::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  margin-right: 1em;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position: 50% 50%;
+  vertical-align: middle;
+}
+.wc-polyfills ul li:first-child::before {
+  background-image: url('pictures/webcomponents.png');
+}
+.wc-polyfills ul li:nth-child(0n + 2)::before {
+  background-image: url('pictures/polymer.svg');
+}
+
+</style>
+
+
+## Make it work
+
+    <!-- Polyfill Web Components support for older browsers -->
+    <mark><script src="webcomponents.min.js"></script></mark>
+
+    <!-- Import element -->
+    <link rel="import" href="google-map.html">
+
+    <!-- Use element -->
+    <google-map lat="37.790" long="-122.390"></google-map>
+
+
+## Ready-made components
+
+* [Polymer](https://www.polymer-project.org/)
+* [Google Web Components](http://googlewebcomponents.github.io/)
+
+<!--
+You can search for ready-made components. There is not that many of them, but
+you can have some.
+-->
+
+
+## Usage examples
+
+* [Toolbar](demo/toolbar.html)
+* [Google map](demo/google-map.html)
+
+<!--
+I created a couple of examples about how the components can be used.
+
+1. Toolbar
+With linking the components simple code turns into more complex. Each element has its styles.
+
+2. Goole Map
+The component encapsulates JavaScript logic
+
+This is all about web components
+
+-->
+
+
+## Methodologies
+{: .slide--shout .slide--azure }
+
+<!--
+As CSS does not provide us with the answer to the question how to do it, the developers should up
+the methodologies.
+The methodology does not give change into the technology. It suggest a developer how to use the
+technology better.
+-->
+
+
+## OOCSS
+{: .slide--shout }
+
+<!--
+The first methodology proposed was OOCSS, stands for Object Oriented CSS.
+-->
+
+
+## Nicole<br/>Sullivan
+{: .nicole }
+
+<!--
+It was in 2007, this is Nicole Sullivan, who authored it.
+She worked for Yahoo and by that time she was dealing with components for Yahoo UI and was trying to
+give some order to all this mess. So, she proposed to use some principles from OOP to CSS. This was in 2007.
+I will not explain the detailes because I belive that this era is passed by.
+But I still think that I should mentione her as a pioneer. She was a first developer who was trying to
+solve it.
+-->
+
+<style>
+
+.shower.list .nicole,
+.nicole {
+  position: relative;
+  background-size: auto 640px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url('pictures/nicole-sullivan.jpg');
+}
+
+.nicole h2 {
+  position: absolute;
+  right: 60px;
+  bottom: 320px;
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 5px 10px 15px rgba(0,0,0,1);
+}
+
+</style>
+
+
+## SMACSS
+{: .slide--shout }
+
+<!--
+Another milestone is SMACCS, which is Scalable and Modular Architecture for CSS.
+This is a book, first published in 2009 but still available.
+-->
+
+
+## Jonathan<br/>Snook
+{: .jonathan }
+
+<!--
+The author is this gentelman, Jonathan Snook. You can find his website if interested.
+-->
+
+<style>
+
+.shower.list .jonathan,
+.jonathan {
+  position: relative;
+  background-size: auto 640px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image:url(pictures/jonathan-snook.jpg);
+}
+
+.jonathan h2 {
+  position: absolute;
+  right: 50px;
+  bottom: 200px;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+</style>
+
+
+## BEM
+{: .slide--shout }
+
+<!--
+And the last new thing appeared was BEM, stands for Block, Element Modifier.
+It was created in 2009, then evoluated and had a long way to its popularity by now.
+-->
+
+
+## Vitaly<br/>Harisov
+{: .harisov }
+
+<!--
+This is one of the main authors. Vitaly Harisov. He works for Yandex and heads the
+frontend development there.
+-->
+
+<style>
+
+.shower.list .harisov,
+.harisov {
+  position: relative;
+  background-image: url(pictures/vitaly-harisov.jpg);
+  background-size: auto 640px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.harisov h2 {
+  position: absolute;
+  right: 65px;
+  bottom: 200px;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+</style>
+
+
+## Sergey<br/>Berezhnoy
+{: .veged }
+
+<!--
+Another co-author is Sergey Berezhnoy, who also works for Yandex.
+O was very lucky to work with them and be a member of the BEM team, so I can tell you
+a little bit more about it today.
+-->
+
+<style>
+
+.shower.list .veged,
+.veged {
+  position: relative;
+  background-image: url(pictures/veged.jpg);
+  background-size: auto 640px;
+  background-position: 85% 50%;
+  background-repeat: no-repeat;
+}
+
+.veged h2 {
+  position: absolute;
+  left: 100px;
+  top: 250px;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+</style>
+
+
+## BEM eco-system
+
+* <mark>CSS Methodology</mark>
+* JavaScript framework
+* Template engine
+* Building system
+* Supplementary tools
+
+<!--
+Actually behind BEM there is a massive amount for JavaScript libraries, own template engine, many supplimentary tools.
+Mosty these things are very local, but the CSS Methodology is a popular thing and becoming a standard all over the
+world. So, I'll explain it in details.
+-->
+
+
+## Harry & Nicolas
+{: .no-title .harry-nicolas }
+
+### Harry<br/>Roberts
+{: .harry }
+
+### Nicolas<br/>Gallagher
+{: .nicolas }
+
+<!--
+These 2 gentelmen are also important persons in the BEM community.
+These are Harry Roberts from Britan and Nicolas Gallaher from USA. They had have a great role in BEM to be wide-spreaded
+and become a standard.
+Both are very famous developers and Harry is also the most wanted speaker for frontend conferences now.
+So, if you are interested in their motivation of taking this approach, you can google for their blogs and social
+networks accounts.
+-->
+
+<style>
+
+.shower.list .harry-nicolas,
+.harry-nicolas {
+  position: relative;
+  background-size: auto 640px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(pictures/harry-nicolas.jpg);
+}
+
+.harry-nicolas .harry {
+  color: #fff;
+  font-size: 45px;
+  position: absolute;
+  bottom: 25px;
+  left: 265px;
+  line-height: 1.5em;
+}
+
+.harry-nicolas .nicolas {
+  color: #fff;
+  font-size: 45px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  line-height: 1.5em;
+}
+
+</style>
+
+
+## BEM
+
+* Block
+* Element
+* Modifier
+
+
+## Interface
+{: .no-title .interface }
+
+<style>
+.interface:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  background-image: url(pictures/bem/page.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+</style>
+
+
+## Interface of blocks
+{: .no-title .interface-blocks }
+
+<style>
+.interface-blocks:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  background-image: url(pictures/bem/page-blocks.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+</style>
+
+
+## Everything is a block
+{: .no-title }
+
+    <body class="page">
+
+      <div class="header">
+          <img class="logo" ... />
+          <div class="search">...</div>
+          <div class="menu">...</div>
+      </div>
+
+      <div class="layout">
+          <div class="sidebar">...</div>
+          <div class="menu">...</div>
+      </div>
+
+<!-- Blocks are marked with classes in HTML -->
+
+
+## Why not...?
+
+    <ul id="menu">
+      <li>Tab 1</li>
+      <li>Tab 2</li>
+    <ul>
+
+<separator/>
+
+    #menu {
+      /* styles for element */
+    }
+
+
+## No IDs
+
+Someday you will need to repeat the block at the same page
+
+
+## Elements
+
+![](pictures/bem/elements.png)
+
+
+## Elements markup
+{: .no-title }
+
+    <div class="tabbed-pane">
+      <ul>
+          <li class="<mark>tabbed-pane--tab</mark>">Tab1</li>
+          <li class="<mark>tabbed-pane--tab</mark>">Tab2</li>
+          <li class="<mark>tabbed-pane--tab</mark>">Tab3</li>
+      </ul>
+      <div class="tabbed-pane--pane">
+          ...
+      </div>
+    </div>
+
+
+## CSS for an element
+
+    .block {
+      /* styles for block */
+    }
+      <mark>.block--element</mark> {
+        /* styles for element */
+      }
+
+<!--
+Elements have their own CSS classes. These classes are named so that it is clear which block the
+element belongs to.
+So, the idea is to encapsulate the components, its name becomes a kind of namespace and everything inside belongs to
+this namespace.
+Here dash-dash is used as a separator. Sometimes people use 2 underscores, but dash-dash looks like the most
+common convention.
+-->
+
+
+## Why not...?
+
+    <ul class="menu">
+      <li class="item">Tab 1</li>
+      <li class="item">Tab 2</li>
+    <ul>
+
+<separator/>
+
+    .menu .item {
+      /* styles for element */
+    }
+
+
+## No cascade
+
+    <div class="panels">
+      <div class="item">
+          <ul class="goods">
+            <li class="item">
+              <!--
+                Remember: <mark>non-deterministic matches</mark>
+                -->
+            </li>
+          </ul>
+      </div>
+    </div>
+
+<!--
+Poor little item does not know if it belongs to panels or to goods.
+Making the selector more specific would not help, because we cannot rely on the document structure.
+-->
+
+
+## Modified block
+{: .no-title .modified-block }
+
+<!--
+Components are similar visually and  functionally.
+Good not to repeat ourselves but to reuse the code of the first component and provide some changes to it.
+-->
+
+<style>
+.modified-block:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  background-image: url(pictures/bem/site-footer-menu.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+</style>
+
+
+## Modifier
+
+    <ul class="menu <mark>menu_footer</mark>">
+      <li class="menu--item">...</li>
+      ...
+    </ul>
+
+<separator/>
+
+    .menu_footer {
+      font-size: 0.8em;
+    }
+
+<!--
+BEM answer to this question is a modifier.
+With additinal CSS clas to a block you can provide more information about view.
+You can see that both block class and modifier class sit together at the same node.
+-->
+
+
+## CSS for a modifier
+    .block {
+      /* styles for block */
+    }
+      <mark>.block_modifier</mark> {
+        /* styles for modifier */
+      }
+      .block--element {
+        /* styles for element */
+      }
+
+
+## Modified element
+
+![](pictures/bem/menu-current-item.png)
+
+
+## Element's modifier
+
+    <ul class="menu">
+      <li class="menu--item">Tab 1</li>
+      <li class="menu--item <mark>menu--item_current</mark>">Tab 2</li>
+      <li class="menu--item">Tab 3</li>
+    </ul>
+
+
+## CSS for an elements' modifier
+
+    .block
+      /* styles for block */
+    }
+      .block--element {
+        /* styles for element */
+      }
+        <mark>.block--element_modifier</mark> {
+          /* styles for modified element
+        }
+{: .css }
+
+
+## Why not...?
+
+    <ul class="menu footer">...<ul>
+
+<separator/>
+
+    .menu.footer { /* combined selector */
+      font-size: 0.8em;
+    }
+
+
+## Why not...?
+
+    <ul class="menu">
+      <li class="menu--item current">Tab 2</li>
+    <ul>
+
+<separator/>
+
+    .menu--item.current { /* combined selector */
+      background-color: red;
+    }
+
+
+## No overspecific selectors
+
+You would suffer when redefining
+
+    .menu--item.current {
+      background: white;
+    }
+    .menu_dark .menu--item {
+      background: black; /* Still white, baby */
+    }
+
+
+## BEM & CSS preprocessors
+
+    .block {
+      /* styles for block */
+      <mark>&</mark>_modifier {
+        /* styles for modifier */
+      }
+      <mark>&</mark>--element {
+        /* styles for element */
+      }
+    }
+{: .css }
+
+
+## [getbem.com](http://getbem.com/)
+{: .slide--shout }
+
+
+## This is solved
+
+* Scoping
+* Specificity conflicts
+* Non-deterministic matches
+* Dependency management
+* Removing unused code
+
+<!--
+So, this was about how the developers deal with component development in CSS now.
+As you can see, CSS as a technology does not provide us a solution. So, we think up
+our own way and recomendations how to use it.
+But the reason of the need to use the metholodogy is drawbacks of CSS. And the right
+way would be to fix the problems itself.
+-->
 
 
 ## Where am i?
