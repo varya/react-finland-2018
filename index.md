@@ -546,13 +546,11 @@ This is!
 
 <td markdown="1">
 
-```css
-<mark>#sidebar ul li a</mark> {
-  color: red;
-  display: block;
-  padding: 1em;
-}
-```
+    <mark>#sidebar ul li a</mark> {
+      color: red;
+      display: block;
+      padding: 1em;
+    }
 
 </td>
 
