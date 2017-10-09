@@ -129,7 +129,7 @@ something. Other developers will bring their changes into the code. And nothing 
 * massive sites
 * big teams of developers
 * heavy UI
-* long running projects
+* long-running projects
 
 <!--
 massive sites: A lot of code, thousands of lines
@@ -259,7 +259,7 @@ So, the code should be maintainable for years
 -->
 
 
-## Where CSS is hard?
+## Where is CSS hard?
 {: .slide--shout .slide--red }
 
 
@@ -1507,7 +1507,7 @@ styles: {
 
 * Non standard syntax
 * Required building
-* No deaad code elimination
+* No dead code elimination
 
 
 ## CSS-in-JS (JSS)
