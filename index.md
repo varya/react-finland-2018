@@ -757,16 +757,15 @@ Add such a sript onto your page and you will be sure that the components work.
 
 ## Make it work
 
-```html
-<!-- Polyfill Web Components support for older browsers -->
-<mark><script src="webcomponents.min.js"></script></mark>
+    <!-- Polyfill Web Components support for older browsers -->
+    <mark><script src="webcomponents.min.js"></script></mark>
 
-<!-- Import element -->
-<link rel="import" href="google-map.html">
+    <!-- Import element -->
+    <link rel="import" href="google-map.html">
 
-<!-- Use element -->
-<google-map lat="37.790" long="-122.390"></google-map>
-```
+    <!-- Use element -->
+    <google-map lat="37.790" long="-122.390"></google-map>
+{: .html }
 
 
 ## Ready-made components
@@ -1070,19 +1069,17 @@ networks accounts.
 
 ## Everything is a block
 
-```html
-<body <mark>class="page"</mark>>
+    <body <mark>class="page"</mark>>
 
-<div <mark>class="header"</mark>>
-  <img <mark>class="logo"</mark> ... />
-  <div class="search">...</div>
-  <div class="menu">...</div>
-</div>
+    <div <mark>class="header"</mark>>
+      <img <mark>class="logo"</mark> ... />
+      <div class="search">...</div>
+      <div class="menu">...</div>
+    </div>
 
-<div class="layout">
-  <div class="sidebar">...</div>
-```
-{: .code--size--m }
+    <div class="layout">
+      <div class="sidebar">...</div>
+{: .code--size--m .html }
 
 <!-- Blocks are marked with classes in HTML -->
 
@@ -1132,14 +1129,13 @@ Someday you will need to repeat the block at the same page.
 
 ## CSS for an element
 
-```css
-.block {
-  /* styles for block */
-}
-<mark>.block__element</mark> {
-  /* styles for element */
-}
-```
+    .block {
+      /* styles for block */
+    }
+    <mark>.block__element</mark> {
+      /* styles for element */
+    }
+{: .css }
 
 <!--
 Elements have their own CSS classes. These classes are named so that it is clear which block the
@@ -1234,17 +1230,16 @@ You can see that both block class and modifier class sit together at the same no
 
 ## CSS for a modifier
 
-```css
-.block {
-  /* styles for block */
-}
-<mark>.block--modifier</mark> {
-  /* styles for modifier */
-}
-.block__element {
-  /* styles for element */
-}
-```
+    .block {
+      /* styles for block */
+    }
+    <mark>.block--modifier</mark> {
+      /* styles for modifier */
+    }
+    .block__element {
+      /* styles for element */
+    }
+{: .css }
 
 
 ## Modified element
@@ -1265,17 +1260,16 @@ You can see that both block class and modifier class sit together at the same no
 
 ## CSS for element modifier
 
-```css
-.block
-  /* styles for block */
-}
-.block__element {
-  /* styles for element */
-}
-<mark>.block__element--modifier</mark> {
-  /* styles for modified element
-}
-```
+    .block
+      /* styles for block */
+    }
+    .block__element {
+      /* styles for element */
+    }
+    <mark>.block__element--modifier</mark> {
+      /* styles for modified element
+    }
+{: .css }
 
 
 ## Why not...?
@@ -1322,17 +1316,16 @@ You would suffer when redefining
 
 ## BEM & CSS preprocessors
 
-```css
-.block {
-  /* styles for block */
-  <mark>&</mark>--modifier {
-    /* styles for modifier */
-  }
-  <mark>&</mark>__element {
-    /* styles for element */
-  }
-}
-```
+    .block {
+      /* styles for block */
+      <mark>&</mark>--modifier {
+        /* styles for modifier */
+      }
+      <mark>&</mark>__element {
+        /* styles for element */
+      }
+    }
+{: .css }
 
 
 ## [getbem.com](http://getbem.com/)
@@ -1448,11 +1441,10 @@ element.innerHTML =
 
 ### styles.css
 
-```css
-.<mark>_styles__title_309571057</mark> {
-  background-color: red;
-}
-```
+    .<mark>_styles__title_309571057</mark> {
+      background-color: red;
+    }
+{: .css }
 
 
 ## Automated BEM
@@ -1663,20 +1655,18 @@ render(
 ## Reflect the state
 {: .styled-components-example }
 
-```js
-const Button styled.button`
-  background: <mark>${props => props.primary ? 'green' : 'white' }</mark>;
-  color: <mark>${props => props.primary ? 'white' : 'green' }</mark>;
-  font-size: 1em;`;
+    const Button styled.button`
+      background: <mark>${props => props.primary ? 'green' : 'white' }</mark>;
+      color: <mark>${props => props.primary ? 'white' : 'green' }</mark>;
+      font-size: 1em;`;
 
-render (
-  <div>
-    <Button>Normal</Button>
-    <Button primary>Primary</Button>
-  </div>
-);
-```
-{: .code--size--m }
+    render (
+      <div>
+        <Button>Normal</Button>
+        <Button primary>Primary</Button>
+      </div>
+    );
+{: .code--size--m .js }
 
 <div class="example">
   <button>Normal</button>
@@ -1722,11 +1712,11 @@ render (
 
 ```css
 .clMJJc {
-  ...
+  …
   background: white; color: green;
 }
 .iJPdAn {
-  ...
+  …
   background: green; color: white;
 }
 ```
