@@ -541,6 +541,7 @@ This is!
       <mark>display: block;</mark>
       <mark>padding: 1em;</mark>
     }
+{: .css }
 
 </td>
 
@@ -551,6 +552,7 @@ This is!
       display: block;
       padding: 1em;
     }
+{: .css }
 
 </td>
 
