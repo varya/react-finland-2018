@@ -90,7 +90,7 @@ overcome.
 
 <!--
 In this picture you can see how the web pages used to look like. And from the architectural point of view they were
-similar. The industry just did not have experience back then to provide recommendations how to build the we good.
+similar. The industry just did not have experience back then to provide recommendations how to build the web good.
 
 Now things have already changed. Today, if you are developing not you cat's homepage but a serious website, it should
 meet the requirements.
@@ -103,7 +103,7 @@ meet the requirements.
 <!--
 This problem was first spoken out loud by this gentelman. His name is Dan Cederholm and he is the author of the book
 shown. The "Bulletproof Web Design" is a first place where the inductry needs were explained.
-In was first published in 2005 and has 2 more editions since then. However this is quite mature book, I still recommend
+It was first published in 2005 and has 2 more editions since then. However this is quite mature book, I still recommend
 it if you want to step in the industry level of creating web sites.
 He first said that the HTML/CSS markup we produce should be stable. It should be maitainable meaning not very sensetive
 to the providing changes.
@@ -1451,7 +1451,7 @@ element.innerHTML =
 ### styles.css
 
 ```css
-<mark>._styles__title_309571057</mark> {
+.<mark>_styles__title_309571057</mark> {
   background-color: red;
 }
 ```
@@ -1517,7 +1517,7 @@ styles: {
 
 * Non standard syntax
 * Required building
-* No ded code elimination
+* No deaad code elimination
 
 
 ## CSS-in-JS (JSS)
@@ -1558,7 +1558,7 @@ styles: {
 </style>
 
 
-## CSS in JSS syntax
+## CSS in JS syntax
 
 ```js
 export const styles = {
@@ -1576,7 +1576,7 @@ export const styles = {
 
 ```js
 import injectSheet from 'react-jss';
-import styles from './styles'
+import styles from './styles.js'
 
 const Button = ({ classes, children }) => (
   <button className={classes.button}>
@@ -1592,7 +1592,7 @@ export default injectSheet(styles)(Button);
 ## CSS-in-JS pros and cons
 
 * Scoped isolated components
-* Dead code elimination
+* In the component file
 * No build step
 
 
@@ -1652,8 +1652,7 @@ export default injectSheet(styles)(Button);
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: green;
-`;
+  color: green;`;
 
 render(
   <Title>
@@ -1741,6 +1740,10 @@ render (
 * No thinking up class names
 * No manual class-component mapping
 * Styles reflect the state of component
+
+
+## Styled innovation
+{: .slide--shout .slide--no-title }
 
 > styled-components [...] remove the mapping between components and styles
 > <figcaption><a href="https://www.styled-components.com/" target="_blank">www.styled-components.com</a></figcaption>
