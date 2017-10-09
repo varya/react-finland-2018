@@ -1704,23 +1704,21 @@ render(
 
 ```html
 <button class="sc-bxivhb clMJJc">Normal</button>
-<button class="sc-bxivhb iJPdAn">Primmary</button>
+<button class="sc-bxivhb iJPdAn">Primary</button>
 ```
 {: .code--size--m }
 
 ### CSS
 
-```css
-.clMJJc {
-  …
-  background: white; color: green;
-}
-.iJPdAn {
-  …
-  background: green; color: white;
-}
-```
-{: .code--size--m }
+    .clMJJc {
+      /* ... other rules */
+      background: white; color: green;
+    }
+    .iJPdAn {
+      /* ... other rules */
+      background: green; color: white;
+    }
+{: .code--size--m .css }
 
 
 ## Styled <mark>components</mark>
