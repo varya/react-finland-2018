@@ -16,6 +16,10 @@ style: |
     .no-title h2 {
       display: none;
     }
+
+    .code--size--m {
+      font-size: 0.8em;
+    }
 ---
 
 # Component development with CSS in 2017 {#cover}
@@ -46,8 +50,6 @@ this topic has been chosen.
 
 * Industry challenges when developing CSS
 * Today's solutions for components on the web
-* Web Components and the future of CSS
-* Style Guide Driven Development
 
 <!--
 This is what I'm going to show today
@@ -269,11 +271,13 @@ So, the code should be maintainable for years
 
 ## Is this good?
 
-    H1 { color: blue }
-    P EM { font-weight: bold }
-    A:link IMG { border: 2px solid blue }
-    A:visited IMG { border: 2px solid red }
-    A:active IMG { border: 2px solid lime }
+```css
+H1 { color: blue }
+P EM { font-weight: bold }
+A:link IMG { border: 2px solid blue }
+A:visited IMG { border: 2px solid red }
+A:active IMG { border: 2px solid lime }
+```
 
 <!--
 Now look at this code. Do you see something strange? Any guess?
@@ -308,7 +312,7 @@ But this is not true, this is easy or at least clear how to manage. You can goog
 -->
 
 
-## What <b>really</b> makes CSS hard?
+## What <mark>really</mark> makes CSS hard?
 
 * Scoping
 * Specificity conflicts
@@ -328,12 +332,14 @@ The real hard problems of CSS are here:
 
 ## CSS has no scoping
 
-    a { /* Affects all the links */
-      color: red;
-    }
-    ul li a { /* Affects all the links in lists */
-      color: green;
-    }
+```css
+a { /* Affects all the links */
+  color: red;
+}
+ul li a { /* Affects all the links in lists */
+  color: green;
+}
+```
 
 <!--
 This especially maters if you link third-party CSS.
@@ -359,15 +365,17 @@ Ok, I will explain.
 
 ## The most specific matters
 
-    <div id="test">
-      <span>Text</span>
-    </div>
+```html
+<div id="test">
+  <span>Text</span>
+</div>
+```
 
-<separator/>
-
-    div#test span { color: green }
-    span { color: red }
-    div span { color: blue }
+```css
+div#test span { color: green }
+span { color: red }
+div span { color: blue }
+```
 
 <!--
 If a brower has 2, 3 or more rules which match the same DOM node, how it decides what are the properties to take into
@@ -408,17 +416,20 @@ To redefine the left-floated sidebar, we would overwrite the rule.
 ## Specificity hell
 {: .no-title }
 
-    .navbar-inverse .navbar-nav>li>a {
-      color: #999;
-    }
+```css
+.navbar-inverse .navbar-nav>li>a {
+  color: #999;
+}
 
-    #home-menu-container #home-menu li a {
-      color: red;
-    }
+#home-menu-container #home-menu li a {
+  color: red;
+}
 
-    body #home-menu ul li a {
-      color: blue !important;
-    }
+body #home-menu ul li a {
+  color: blue !important;
+}
+```
+{: .code--size--m }
 
 <!--
 People ask on Stackoverflow how to overwrite Bootsrtap
@@ -434,9 +445,11 @@ These things can be in different files
 
 ## Non-deterministic matches
 
-    #content div div {
-      float: left;
-    }
+```css
+#content div div {
+  float: left;
+}
+```
 
 <!-- This can be matched to anything -->
 <!-- You cannot rely on the document structure, because it contantly changes while developing -->
@@ -487,9 +500,11 @@ OK, there is import. But this is not  aproduction solution. And assuming undeter
 
 100 pages in projects
 
-    .person div a {
-      color: pink;
-    }
+```css
+.person div a {
+  color: pink;
+}
+```
 
 Can I remove it? Will it break something? Maybe it is for a third-party HTML code?
 
@@ -521,21 +536,25 @@ This is!
 
 <td markdown="1">
 
-    #sidebar ul li a {
-      <mark>color: red;</mark>
-      <mark>display: block;</mark>
-      <mark>padding: 1em;</mark>
-    }
+```css
+#sidebar ul li a {
+  <mark>color: red;</mark>
+  <mark>display: block;</mark>
+  <mark>padding: 1em;</mark>
+}
+```
 
 </td>
 
 <td markdown="1">
 
-    <mark>#sidebar ul li a</mark> {
-      color: red;
-      display: block;
-      padding: 1em;
-    }
+```css
+<mark>#sidebar ul li a</mark> {
+  color: red;
+  display: block;
+  padding: 1em;
+}
+```
 
 </td>
 
@@ -670,11 +689,13 @@ Everything about one components can be detached into an HTML file and then linke
 
 ## HTML import, library
 
-    <!-- Import element -->
-    <link rel="import" href="my-lib/google-map.html">
+```html
+<!-- Import element -->
+<link rel="import" href="my-lib/google-map.html">
 
-    <!-- Use element -->
-    <google-map lat="37.790" long="-122.390"></google-map>
+<!-- Use element -->
+<google-map lat="37.790" long="-122.390"></google-map>
+```
 
 <!--
 With HTML imports you can create your own components and use them across different websites.
@@ -738,14 +759,16 @@ Add such a sript onto your page and you will be sure that the components work.
 
 ## Make it work
 
-    <!-- Polyfill Web Components support for older browsers -->
-    <mark><script src="webcomponents.min.js"></script></mark>
+```html
+<!-- Polyfill Web Components support for older browsers -->
+<mark><script src="webcomponents.min.js"></script></mark>
 
-    <!-- Import element -->
-    <link rel="import" href="google-map.html">
+<!-- Import element -->
+<link rel="import" href="google-map.html">
 
-    <!-- Use element -->
-    <google-map lat="37.790" long="-122.390"></google-map>
+<!-- Use element -->
+<google-map lat="37.790" long="-122.390"></google-map>
+```
 
 
 ## Ready-made components
@@ -1048,41 +1071,43 @@ networks accounts.
 
 
 ## Everything is a block
-{: .no-title }
 
-    <body class="page">
+```html
+<body <mark>class="page"</mark>>
 
-      <div class="header">
-          <img class="logo" ... />
-          <div class="search">...</div>
-          <div class="menu">...</div>
-      </div>
+<div <mark>class="header"</mark>>
+  <img <mark>class="logo"</mark> ... />
+  <div class="search">...</div>
+  <div class="menu">...</div>
+</div>
 
-      <div class="layout">
-          <div class="sidebar">...</div>
-          <div class="menu">...</div>
-      </div>
+<div class="layout">
+  <div class="sidebar">...</div>
+```
+{: .code--size--m }
 
 <!-- Blocks are marked with classes in HTML -->
 
 
 ## Why not...?
 
-    <ul id="menu">
-      <li>Tab 1</li>
-      <li>Tab 2</li>
-    <ul>
+```html
+<ul id="menu">
+  <li>Tab 1</li>
+  <li>Tab 2</li>
+<ul>
+```
 
-<separator/>
-
-    #menu {
-      /* styles for element */
-    }
+```css
+#menu {
+  /* styles for the menu */
+}
+```
 
 
 ## No IDs
 
-Someday you will need to repeat the block at the same page
+Someday you will need to repeat the block at the same page.
 
 
 ## Elements
@@ -1093,16 +1118,18 @@ Someday you will need to repeat the block at the same page
 ## Elements markup
 {: .no-title }
 
-    <div class="tabbed-pane">
-      <ul>
-          <li class="<mark>tabbed-pane--tab</mark>">Tab1</li>
-          <li class="<mark>tabbed-pane--tab</mark>">Tab2</li>
-          <li class="<mark>tabbed-pane--tab</mark>">Tab3</li>
-      </ul>
-      <div class="tabbed-pane--pane">
-          ...
-      </div>
-    </div>
+```html
+<div class="tabbed-pane">
+  <ul>
+    <li class="<mark>tabbed-pane--tab</mark>">Tab1</li>
+    <li class="<mark>tabbed-pane--tab</mark>">Tab2</li>
+    <li class="<mark>tabbed-pane--tab</mark>">Tab3</li>
+  </ul>
+  <div class="tabbed-pane--pane">
+    ...
+  </div>
+</div>
+```
 
 
 ## CSS for an element
@@ -1317,27 +1344,315 @@ way would be to fix the problems itself.
 
 ## Modular CSS
 
-* CSS-modules
+* CSS modules
 * CSS-in-JS (JSS)
 * Styled Components
 
 
-## Where am i?
-
-The following slides demonstrate presentation **written in markdown** and *shown in html*, directly from the GitHub.
-
-Based on these technologies
-
-* [Shower, presentation engine](https://github.com/shower/shower)
-* [Jekyller, md->html generator](https://github.com/shower/jekyller)
-* [SC5 brand styles for Shower](https://sc5.github.io/shower-sc5/)
+## CSS modules
+{: .slide--shout }
 
 
-## Kinds of slides
-{: .slide--shout .slide--red }
+## Glen<br/><span class="surname">Maddern</span>
+{: .maddern .slide--full-image }
+
+![](pictures/glen-maddern.jpg)
+
+<!--
+-->
+
+<style>
+
+.maddern h2:not(.slide--shout) {
+  display: block;
+  position: absolute;
+  right: 90px;
+  top: 55px;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.maddern h2 .surname {
+  color: white;
+}
+
+</style>
 
 
-## Blank slide
+## Manual CSS
+
+### page.html
+
+```html
+<h1 class="title">An example heading</h1>
+```
+
+### styles.css
+
+```css
+.title {
+  background-color: red;
+}
+```
+
+
+## CSS modules input
+
+### page.js -> page.html
+
+```js
+import styles from "./styles.css";
+
+element.innerHTML = 
+  `<h1 class="${styles.title}">
+     An example heading
+  </h1>`;
+```
+
+
+## CSS modules output
+
+### page.html
+
+```html
+<h1 class="<mark>_styles__title_309571057</mark>">
+  An example heading
+</h1>
+```
+
+### styles.css
+
+```css
+<mark>._styles__title_309571057</mark> {
+  background-color: red;
+}
+```
+
+## CSS modules pros and cons
+
+* Requires generating
+* Limits development patterns
+* The result is still our old CSS
+
+
+## CSS-in-JS (JSS)
+{: .slide--shout }
+
+
+## CSS in JSS syntax
+
+```js
+export const styles = {
+  button: {
+    padding: '10px',
+    '&:hover': {
+      background: blue;
+    }
+  }
+}
+```
+
+
+## Injecting JSS into HTML
+
+```js
+import injectSheet from 'react-jss';
+import styles from './styles'
+
+const Button = ({ classes, children }) => (
+  <button className={classes.button}>
+    {children}
+  </button>
+)
+
+export default injectSheet(styles)(Button);
+```
+
+
+## CSS-in-JS pros and cons
+
+TODO
+
+
+## Why to write classes?
+{: .thinkful-cat }
+
+![](pictures/thinkful-cat.svg)
+
+<style>
+.thinkful-cat p {
+  text-align: center;
+}
+
+.thinkful-cat img {
+  width: 500px;
+}
+</style>
+
+
+## Styled components
+{: .slide--shout }
+
+
+## To style component
+
+```js
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: green;
+`;
+
+render(
+  <Title>
+    Hello, world!
+  </Title>
+)
+```
+
+## Reflect component state
+{: .styled-components-example }
+
+```js
+const Button styled.button`
+  background: ${props => props.primary ? 'green' : 'white' };
+  color: ${props => props.primary ? 'white' : 'green' };
+  font-size: 1em;
+  ...
+`;
+
+render (
+  <div>
+    <Button>Normal</Button>
+    <Button primary>Primary</Button>
+  </div>
+);
+```
+
+<div class="example">
+  <button>Normal</button>
+  <button class="primary">Primary</button>
+</div>
+
+<style>
+.styled-components-example .example {
+  position: absolute;
+  right: 40px;
+  bottom: 80px;
+}
+
+.styled-components-example button {
+  display: inline-block;
+  appearance: none;
+  box-shadow: none;
+  font-size: 40px;
+  padding: 0.25em;
+  margin: 0 0.5em;
+  background: white;
+  color: green;
+}
+.styled-components-example button.primary {
+  background: green;
+  color: white;
+}
+</style>
+
+
+## What does browser get?
+{: .no-title }
+
+### HTML
+
+```html
+<button class="sc-bxivhb clMJJc">Normal</button>
+<button class="sc-bxivhb iJPdAn">Primmary</button>
+```
+
+### CSS
+
+```css
+.clMJJc {
+  ...
+  background: white; color: green;
+}
+
+.iJPdAn {
+  ...
+  background: green; color: white;
+}
+```
+
+
+## styled-components
+
+* No class names
+* Styles reflect the state of component
+
+<!-- TODO: logo -->
+
+
+## Styled <mark>components</mark>
+{: .slide--no-title }
+
+> styled-components [...] remove the mapping between components and styles
+> <figcaption><a href="https://www.styled-components.com/" target="_blank">www.styled-components.com</a></figcaption>
+
+
+## Component development in CSS, 2017
+
+* Big CSS
+* Web Components
+* BEM
+* CSS modules
+* CSS-in-JS (JSS)
+* Styled components
+
+
+## Thank you
+{: .thanks }
+
+Varya Stepanova, SC5 Online (NordCloud Company)<br/>
+[@varya_en](https://twitter.com/varya_en){: .twitter }; on the web: [varya.me](http://varya.me){: .web }
+
+### Slides
+
+### [varya.me/component-development-css-2017](http://varya.me/component-development-css-2017/)
+
+### Credits
+Roman Komarov, [@kizmarh](https://twitter.com/kizmarh);
+Andrey Okonetchnikov, [@okonetchnikov](https://twitter.com/okonetchnikov);
+Vadim Makeev, [@pepelsbey_](https://twitter.com/pepelsbey_).
+
+<style>
+.thanks h3 {
+  font-size: 28px;
+  margin-bottom: 0.5em;
+  line-height: 1.25em;
+}
+.thanks .twitter
+{
+  text-decoration: none;
+  color: currentColor;
+  background: none;
+  border-bottom: 0;
+}
+.thanks .twitter::before
+{
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image:url('pictures/twitter-logo.png');
+  background-size: cover;
+  margin-right: 0.5em;
+  margin-bottom: -0.5em;
+}
+</style>
+
+
+
+
+
 
 
 ## Plain text
