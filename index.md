@@ -1630,7 +1630,7 @@ export default injectSheet(styles)(Button);
 * ![](pictures/glen.jpeg) Glen Maddern
 * ![](pictures/max.jpeg) Max Stoiber
 * ![](pictures/phil.png) Phil Plückthun
-* ![]() and the others
+* and the others
 {: .styled-components-crew }
 </div>
 
@@ -1639,6 +1639,9 @@ export default injectSheet(styles)(Button);
   width: 150px;
   margin-bottom: 1em;
   vertical-align: middle;
+}
+.styled-components-crew li:last-child {
+  margin-top: 60px;
 }
 </style>
 
