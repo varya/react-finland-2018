@@ -1084,25 +1084,20 @@ networks accounts.
 <!-- Blocks are marked with classes in HTML -->
 
 
-## Why not...?
+## Why not to use ID?
 
-```html
-<ul id="menu">
-  <li>Tab 1</li>
-  <li>Tab 2</li>
-<ul>
-```
+    <ul <mark>id="menu"</mark>>
+      <li>Tab 1</li>
+      <li>Tab 2</li>
+    <ul>
+{: .html .code--size--m }
 
-```css
-#menu {
-  /* styles for the menu */
-}
-```
+    <mark>#menu</mark> {
+      /* styles for the menu */
+    }
+{: .css .code--size--m }
 
-
-## No IDs
-
-Someday you will need to repeat the block at the same page.
+### Someday you will need to repeat the block at the same page.
 
 
 ## Elements
@@ -1147,7 +1142,7 @@ common convention.
 -->
 
 
-## Why not...?
+## Why not cascade?
 
 ```html
 <ul class="menu">
@@ -1156,11 +1151,10 @@ common convention.
 <ul>
 ```
 
-```css
-.menu .item {
-  /* styles for element */
-}
-```
+    <mark>.menu .item</mark> {
+      /* styles for element */
+    }
+{: .css }
 
 
 ## No cascade
@@ -1272,32 +1266,30 @@ You can see that both block class and modifier class sit together at the same no
 {: .css }
 
 
-## Why not...?
+## Why not combined selector?
 
 ```html
 <ul class="menu footer">...<ul>
 ```
 
-```css
-.menu.footer { /* combined selector */
-  font-size: 0.8em;
-}
-```
+    <mark>.menu.footer</mark> { /* combined selector */
+      font-size: 0.8em;
+    }
+{: .css }
 
 
-## Why not...?
+## Why not combined selector?
 
 ```html
 <ul class="menu">
-  <li class="menu--item current">Tab 2</li>
+  <li class="menu__item current">Tab 2</li>
 <ul>
 ```
 
-```css
-.menu__item.current { /* combined selector */
-  background-color: red;
-}
-```
+    <mark>.menu__item.current</mark> { /* combined selector */
+      background-color: red;
+    }
+{: .css }
 
 
 ## No overspecific selectors
@@ -1308,7 +1300,7 @@ You would suffer when redefining
 .menu__item.current {
   background: white;
 }
-.menu_dark .menu__item {
+.menu--dark .menu__item {
   background: black; /* Still white, babe */
 }
 ```
