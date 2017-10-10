@@ -29,7 +29,9 @@ Varya Stepanova, <span class="position">Senior Software Specialist at SC5 Online
 
 
 ## Me
-{: .no-title }
+{: .no-title .about-me }
+
+![](pictures/me.jpg){: .photo }
 
 ### Now
 Senior Software Specialist at SC5 Online
@@ -44,6 +46,17 @@ Components on the web: design systems, pattern libraries, SGDD, BEM. Techs: CSS,
 Before we start, I would like to introduce myself and explain why
 this topic has been chosen.
 -->
+
+<style>
+.about-me .photo {
+  float: left;
+  width: 300px;
+  margin-top: 1em;
+  margin-bottom: 6em;
+  margin-right: 1em;
+  border-radius: 50%;
+}
+</style>
 
 
 ## Spoiler
