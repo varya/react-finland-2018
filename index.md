@@ -20,6 +20,9 @@ style: |
     .code--size--m {
       font-size: 0.8em;
     }
+    .slide .small {
+      font-size: 50%;
+    }
 ---
 
 # Component development with CSS in 2017 {#cover}
@@ -34,7 +37,7 @@ Varya Stepanova, <span class="position">Senior Software Specialist at SC5 Online
 ![](pictures/me.jpg){: .photo }
 
 ### Now
-Senior Software Specialist at SC5 Online
+Design Systems Specialist<br/> at Intergalactico <sub class="small">Nordcloud Design Studio</sub>
 
 ### Before
 TMG (Amsterdam, the Netherlands); Yandex&nbsp;(Moscow,&nbsp;Russia)
@@ -48,6 +51,9 @@ this topic has been chosen.
 -->
 
 <style>
+.about-me p {
+  font-size: 80%;
+}
 .about-me .photo {
   float: left;
   width: 300px;
@@ -757,6 +763,7 @@ Add such a sript onto your page and you will be sure that the components work.
   background-position: top left;
   background-position: 50% 50%;
   vertical-align: middle;
+  position: relative;
 }
 .wc-polyfills ul li:first-child::before {
   background-image: url('pictures/webcomponents.png');
@@ -1361,7 +1368,7 @@ way would be to fix the problems itself.
 ## Modular CSS
 
 * CSS modules
-* CSS-in-JS (JSS)
+* JSS
 * Styled Components
 
 
@@ -1515,7 +1522,7 @@ styles: {
 * No dead code elimination
 
 
-## CSS-in-JS (JSS)
+## JSS
 {: .slide--shout }
 
 ![](pictures/jss.png){: .jss-logo }
@@ -1527,7 +1534,7 @@ styles: {
 </style>
 
 
-## Oleg<br/>Slobodskoi
+## Oleg
 {: .oleg }
 
 <style>
@@ -1543,7 +1550,7 @@ styles: {
 
 .oleg h2 {
   position: absolute;
-  right: 50px;
+  right: 200px;
   top: 115px;
   font-size: 55px;
   color: white;
@@ -1553,7 +1560,7 @@ styles: {
 </style>
 
 
-## CSS in JS syntax
+## JSS syntax
 
 ```js
 export const styles = {
@@ -1740,25 +1747,25 @@ render(
 > <figcaption><a href="https://www.styled-components.com/" target="_blank">www.styled-components.com</a></figcaption>
 
 
-## Component development in CSS, 2017
+## Component development with CSS in 2018
 
 * Big CSS
 * Web Components
 * BEM
 * CSS modules
-* CSS-in-JS (JSS)
-* Styled components
+* JSS
+* styled-components
 
 
 ## Thank you
 {: .thanks }
 
-Varya Stepanova, SC5 Online (NordCloud Company)<br/>
+Varya Stepanova, Intergalactico - Nordcloud Design Studio<br/>
 [@varya_en](https://twitter.com/varya_en){: .twitter }; on the web: [varya.me](http://varya.me){: .web }
 
 ### Slides
 
-### [varya.me/component-development-css-2017](http://varya.me/component-development-css-2017/)
+### [varya.me/component-development-css-2018](http://varya.me/component-development-css-2018/)
 
 ### Credits
 Roman Komarov, [@kizmarh](https://twitter.com/kizmarh);
