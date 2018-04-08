@@ -25,9 +25,10 @@ style: |
     }
 ---
 
-# Component development with CSS in 2017 {#cover}
+# Component development with CSS in 2018 {#cover}
 
-Varya Stepanova, <span class="position">Senior Software Specialist at SC5 Online</span>
+Varya Stepanova, <span class="position">Design Systems Specialist<br/>
+at Intergalactio - Nordcloud Design Studio</span>
 {:.author}
 
 
