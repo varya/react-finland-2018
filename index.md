@@ -1,6 +1,6 @@
 ---
 
-layout: sc5
+layout: ig
 
 style: |
 
