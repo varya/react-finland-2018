@@ -1592,7 +1592,7 @@ export default injectSheet(styles)(Button);
 {: .code--size--m }
 
 
-## CSS-in-JS pros and cons
+## JSS pros and cons
 
 * Scoped isolated components
 * In the component file
