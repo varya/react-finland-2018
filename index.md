@@ -25,11 +25,664 @@ style: |
     }
 ---
 
-# Component development with CSS in 2018 {#cover}
+# How to use React, webpack and other buzzwords if there is no need  {#cover}
+
+<div class="title">
+How to use
+
+<div class="logos">
+  <img src="pictures/react.png" class="logo react"/>
+  &
+  <img src="pictures/webpack.png" class="logo webpack"/>
+</div>
+and other
+<span class="buzz">buzzwords</span>
+if there is no need
+</div>
 
 Varya Stepanova, <span class="position">Design Systems Specialist<br/>
 at Intergalactio - Nordcloud Design Studio</span>
 {:.author}
+
+<style>
+#cover {
+  background-image:url('pictures/coding-beach.jpg');
+  background-size: cover;
+  background-position: 0 0, center;
+}
+
+#cover:before {
+  -webkit-filter: drop-shadow( -2px -2px 2px #000 );
+  filter: drop-shadow( -2px -2px 2px #000 );
+  text-align: left;
+}
+
+#cover h2 {
+  display: none;
+}
+
+#cover .title {
+  color: #000;
+  font-size: 3em;
+  text-align: left;
+}
+
+#cover .title .logos {
+  display: block;
+}
+
+#cover .title .logo {
+  height: 1em;
+}
+
+#cover .title .webpack {
+  font-size: 1.5em;
+}
+
+#cover .title .buzz,
+#cover .title .buzz * {
+  font-family: "Roboto", monospace;
+    -webkit-animation: cray 6s infinite steps(50);
+          animation: cray 6s infinite steps(50);
+  display: inline-block;
+}
+@-webkit-keyframes cray {
+  2% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  4% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  6% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  8% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  10% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  12% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  14% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  16% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  18% {
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  20% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  22% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  24% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  26% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  28% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  30% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  32% {
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  34% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  36% {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  38% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  40% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  42% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  44% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  46% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  48% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  50% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  52% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  54% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  56% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  58% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  60% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  62% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  64% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  66% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  68% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  70% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: uppercase;
+  }
+  72% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  74% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  76% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  78% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  80% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  82% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  84% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+  86% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  88% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  90% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  92% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  94% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: capitalize;
+  }
+  96% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  98% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@keyframes cray {
+  2% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  4% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  6% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  8% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  10% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  12% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  14% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  16% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  18% {
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  20% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  22% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  24% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  26% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  28% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  30% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  32% {
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  34% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  36% {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  38% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  40% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  42% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  44% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  46% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+  48% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  50% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  52% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+  54% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  56% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  58% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  60% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  62% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  64% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  66% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  68% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  70% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: uppercase;
+  }
+  72% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  74% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  76% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  78% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  80% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  82% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: none;
+  }
+  84% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+  86% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  88% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: none;
+  }
+  90% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  92% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+  94% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: line-through;
+    text-transform: capitalize;
+  }
+  96% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  98% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+
+
+</style>
+
+<!-- Picture credits: http://www.createmydreamlifestyle.com/index.php/2016/07/30/advantages-of-the-laptop-lifestyle/ -->
 
 
 ## Me
