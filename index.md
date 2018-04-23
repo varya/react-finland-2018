@@ -45,6 +45,8 @@ if there is no need
 <!--
 Cover image: http://www.adstasher.com/2013/06/k-y-jelly-love-machines-print-ads.html
 
+I will share what strategy I used to learn new technologies in last 5 years.
+
 -->
 
 <style>
@@ -711,8 +713,15 @@ TMG (Amsterdam, the Netherlands); Yandex&nbsp;(Moscow,&nbsp;Russia)
 Components on the web: design systems, pattern libraries, SGDD, BEM. Techs: CSS, JavaScript, etc.
 
 <!--
-Before we start, I would like to introduce myself and explain why
-this topic has been chosen.
+
+My name is Varya, I have experience in development working in small to large projects across the
+world. The things I have been doing are about frontend and most of the project was around something which is
+currently called "design systems". In previous years, this activity had many different names like "pattern libraries",
+"styleguides", "component approach", "atomic design". But whatever the naming, it included developing encapsulated
+interface components. A while ago it was BEM CSS and XSL for templating, then a few JavaScript frameworks whose names
+history does not remember, a little bit of Angular and currently React. Of course, since it has always been something
+modular, there were various building and documenting solutions.
+
 -->
 
 <style>
@@ -733,6 +742,16 @@ this topic has been chosen.
 ## How to study new?
 {: .how .cover }
 
+<!--
+
+From time to time, I faced reality. In frontend, we have a new framework every two weeks :-) As an engineer, I need to
+know the new things so that I could bring my expertise into the working project. On the other hand, we usually learn by
+doing. But if the working project does not offer me possibility to learn these new frameworks, libraries and building
+solutions, how can I gain knowledge? This is in fact chicken-egg problem. Trying to break this circle, people usually
+come up with some pet projects. What could work as such a project?
+
+-->
+
 <style>
 .how {
   background-image:url('pictures/chicken-egg.jpg');
@@ -747,44 +766,97 @@ this topic has been chosen.
 
 ![](pictures/todo.png)
 
+<!--
+
+I know that some people easily come up with a valuable idea what could be a pet project. But some don't, and they often
+do something like ToDo application. BTW, I searched "ToDO" in Github, and it gave me nearly one hundred fifty thousand
+repositories. So, ToDo app is a nice idea but I really wanted something useful.
+
+-->
 
 ## Blog
 
+* Overengineering
 * Open source
 * Hosted on GitHub
 * Source in Markdown
-* Technologies I use or want to use at work
+* Generated HTML
+
+<!--
+
+With that in mind, 5 years ago I decided that I would make my own blog. I wanted a standalone solution so that nothing
+would limit my experiments. That time, I decided that I am OK with a bit of overengineering. And the end of the day, I
+am doing it not only for getting the things done but also for playing around with new technologies.
+I decided that everything will be open, not only the code but the texts of my posts too. I host everything on GitHub,
+and anyone can explore the codebase. I even got fixes for my broken grammar! The source of the posts is in Markdown, it
+is GitHub friendly and can be even edited in its web interface. For hosting, I went with GitHub pages, and
+because of that the blog is actually a static HTML website. All the pages are generated into plain HTML.
+
+-->
 
 
 ## March 2013: ![](pictures/jekyll.png){: .jekyll }
 {: .tech-stack--jekyll }
+
 ![](pictures/bem.png){: .bem }
 ![](pictures/gnu.png){: .gnu }
 <span class="borschik">borschik</span>
-<span class="csso">CSSO</span>
-<span class="bem-core">bem-core</span>
 <span class="bem-tools">bem-tools</span>
+<span class="bem-core">bem-core</span>
+<span class="csso">CSSO</span>
+
+<!--
+
+The first version was built in 2013. Initially I went with Jekyll because it is embedded into GitHub. I did not need any
+building step which generates HTML, I just commited the Markdown sources and GitHub itself generated HTMLs for me
+according to the config. This structure has already been gone but I still sometimes use Jekyll for some other things.
+For example, this presentation is hosted on GitHub and built with Jekyll.
+
+For the blog, I was interested to bring there more frontend technologies. I began with BEM CSS, and I built the bundle
+with GNUmakefile. Then I tried borschik, bem-tools, used bem-core component library and optimized the CSS with CSSO.
+
+-->
 
 <style>
+
+.tech-stack--jekyll h2 {
+  margin-bottom: 1.5em;
+  position: relative;
+}
 
 .tech-stack--jekyll .jekyll {
   height: 125px;
   margin-bottom: -30px;
+  position: absolute;
+  bottom: 0;
 }
 
 .tech-stack--jekyll .bem {
   height: 100px;
-
-  /* animation: rot 4.5s infinite linear;*/
+  margin-right: 50px;
 }
+
 .tech-stack--jekyll .gnu {
   height: 100px;
-
-  /* animation: rot 4.5s infinite linear;
-  animation-delay: 0.75s; */
+  margin-right: 50px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Anton');
+/* latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Anton Regular'), local('Anton-Regular'), url(https://fonts.gstatic.com/s/anton/v9/1Ptgg87LROyAm3K9-C8CSKlvPfE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Anton Regular'), local('Anton-Regular'), url(https://fonts.gstatic.com/s/anton/v9/1Ptgg87LROyAm3Kz-C8CSKlv.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 .tech-stack--jekyll .borschik {
   -webkit-box-sizing: content-box;
@@ -796,22 +868,23 @@ this topic has been chosen.
   text-transform: uppercase;
   -o-text-overflow: clip;
   text-overflow: clip;
-  letter-spacing: 5px;
-  text-shadow: 3px 3px 0 rgb(238,238,238) , 5px 5px 0 rgb(112,112,112) ;
+  letter-spacing: 4px;
+  margin-right: 50px;
 
-  /*animation: rot 4.5s infinite linear;
-  animation-delay: 1.5s;*/
 }
 
 .tech-stack--jekyll .csso {
   font-family: Verdana;
   font-size: 50px;
-
-  /*animation: rot 4.5s infinite linear;
-  animation-delay: 2.25s; */
+  position: relative;
 }
-.tech-stack--jekyll .csso::first-letter {
+.tech-stack--jekyll .csso:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: 'O';
   color: red;
+  line-height: 1.25em;
 }
 
 .tech-stack--jekyll .bem-core {
@@ -820,19 +893,15 @@ this topic has been chosen.
   font-size: 40px;
   line-height: 1;
   color: #f98ca4;
-  text-shadow: -1px -1px 0 #6e1f58, 1px -1px 0 #6e1f58, -1px 1px 0 #6e1f58, 1px 1px 0 #6e1f58, 1px 0px 0px #65f283, 0px 1px 0px #65f283, 2px 1px 0px #65f283, 1px 2px 0px #65f283, 3px 2px 0px #65f283, 2px 3px 0px #65f283, 4px 3px 0px #65f283, 3px 4px 0px #65f283, 5px 4px 0px #65f283, 3px 5px 0px #6e1f58, 6px 5px 0px #6e1f58, -1px 2px 0 black, 0 3px 0 #6e1f58, 1px 4px 0 #6e1f58, 2px 5px 0px #6e1f58, 2px -1px 0 #6e1f58, 3px 0 0 #6e1f58, 4px 1px 0 #6e1f58, 5px 2px 0px #6e1f58, 6px 3px 0 #6e1f58, 7px 4px 0 #6e1f58, 10px 10px 4px #dac249;
 
-  /*animation: rot 4.5s infinite linear;
-  animation-delay: 3s;*/
+  margin-right: 50px;
 }
 
 .tech-stack--jekyll .bem-tools {
-
   font-family: Menlo;
   font-size: 40px;
-
-  /*animation: rot 4.5s infinite linear;
-  animation-delay: 3.75s;*/
+  white-space: nowrap;
+  margin-right: 50px;
 }
 
 
@@ -866,42 +935,146 @@ this topic has been chosen.
 </style>
 
 
-## May 2014: DOCPAD
-{: .tech-stack--dockpad }
+## May 2014: <span class="docpad">DOCPAD</span>
+{: .tech-stack--docpad }
 
 ![](pictures/grunt.svg){: .grunt }
 ![](pictures/gulp.svg){: .gulp }
 <span class="styleguide">styleguide</span>
 <span class="visual-tests">visual regression tests</span>
 
+<!--
+
+A year later I switch to Docpad for HTML generation and in parallel I experiemnted a lot with diffrent building
+soltuions. It was all around BEM structure, even though it was pure CSS, the compoents were separated similar to how we
+now do it in React. GNUmakefiles did not seem up to date solution and I switched first onto Grunt and later to Gulp.
+Then I experimented not with technologies but with approaches. For example, I did styleguide-first approach when developing
+the components for the interface. And since eveyrthing was componentized and documented, I could easily have visual
+regression tests for the blocks.
+
+-->
+
 <style>
-.tech-stack--dockpad .grunt {
-  height: 125px;
+
+.tech-stack--docpad h2 {
+  margin-bottom: 1.5em;
 }
-.tech-stack--dockpad .gulp {
+
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_bZF3gfD_vx3rCubqg.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_bZF3gnD_vx3rCs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.tech-stack--docpad .docpad {
+  font-family: 'Montserrat', sans-serif;
+  color: #3D3D3D;
+}
+
+.tech-stack--docpad .grunt {
   height: 125px;
+  margin-right: 50px;
+}
+
+.tech-stack--docpad .gulp {
+  height: 150px;
+  margin-right: 50px;
+}
+
+.tech-stack--docpad .styleguide {
+  font-family: 'CoreCircus', sans-serif;
+  font-size: 50px;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Berkshire Swash';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Berkshire Swash Regular'), local('BerkshireSwash-Regular'), url(https://fonts.gstatic.com/s/berkshireswash/v6/ptRRTi-cavZOGqCvnNJDl5m5XmN_pM4zT305QaYc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Berkshire Swash';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Berkshire Swash Regular'), local('BerkshireSwash-Regular'), url(https://fonts.gstatic.com/s/berkshireswash/v6/ptRRTi-cavZOGqCvnNJDl5m5XmN_qs4zT305QQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.tech-stack--docpad .visual-tests {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 50px;
+  white-space: nowrap;
+  background: red;
+  background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+  background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
 
-## January 2017: Metalsmith
+## January 2017: ![](pictures/metalsmith.svg){: .metalsmith }
+{: .tech-stack--metalsmith }
 
-* React.js for HTML generation and client interactions
-* css modules for styling
-* Webpack build
+
+![](pictures/react.png){: .react } ![](pictures/webpack.png){: .webpack } ![](pictures/css-modules.svg){: .css-modules }
+
+* A lot of plugins
+* "Server" React + "client" React
 
 <!--
-[Jekyll](https://jekyllrb.com/)<br/>
-   March 2013. Plain CSS, month later - BEM, GNUmake building, Borschik + CSSO
-   July 2013: using bem-core library, BH template engine
-   Oct 2013: bem-tools@1.0.0
-   April 2014: bem-core@2
-1. Docpad
-   May 2014. Grunt
-   Jul 2015: Automatic generated styleguide, Gulp for building
-   Oct 2015: visual regression tests
-1. Metalsmith
-   Jan 2017. React as templating solution + react on client + css-modules
+
+About a year ago I really wanted to include React, webpack and some styling solution into the blog tech stack. But it is a very simple site and it does not
+assume a lot of interactions on client. So, I was looking for a solution which helps me to use React when generating
+static HTML. Ideally, I wanted also to have some little interactions. So, some components would be mounted on client.
+And, of course, I wanted these two types of components to be from the same codebase.
+I looked into some other generators which I don't remember and selected Metalsmith out of all. I like that it is very
+much customizable. This is one of the reasons why reaclifying is possible: there is a plugin which allows to use React
+components as templates.
+It also gives a lot of control over the files which it processes, and I use it a lot.
+
 -->
+
+<style>
+.tech-stack--metalsmith h2 {
+  position: relative;
+}
+
+.tech-stack--metalsmith .metalsmith {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.tech-stack--metalsmith .react {
+  height: 60px;
+  margin-right: 50px;
+}
+.tech-stack--metalsmith .webpack {
+  height: 60px;
+  margin-right: 50px;
+}
+.tech-stack--metalsmith .css-modules {
+  height: 120px;
+  margin-right: 50px;
+}
+</style>
 
 
 ## File structure
@@ -917,19 +1090,33 @@ content/
 [http://varya.me/<mark class="important">en</mark>/posts/my-awesome-post/](http://varya.me)<br/>
 [http://varya.me/<mark class="important">ru</mark>/posts/my-awesome-post/](http://varya.me)
 
+<!--
 
-## Metalsmith blog
+The full control over processing files made helped a lot when dealing with multi-lingual structure of my blog. I write
+posts in English and Russian, sometimes I translate, and sometimes posts are written in one language only. If the post
+is available in both languages, I prefer to keep the sources together under the same directory. But when rendered into
+the website, it looks much better if the language code works are prefix. Metalsmith gives me to manipulate all the
+files in the stream, and change their location. Also, when generating HTML for a blog post, I can detect if there is
+a translation to the opposite language or not. Then, I provide language switcher if possible.
 
-1. Manipulates `*.md` files according to config and processes them using different <mark class="important">plugins</mark>.
-1. Generates static HTML by <mark class="important">React templates</mark>.
+-->
 
-   CSS modules give unique classes.
-   {: .note }
-1. Builds CSS and JS with <mark class="important">Webpack</mark>.
 
-   CSS classes match!
-   {: .note }
-1. Client React works in browser.
+## Building the frontend
+
+* Generates static HTML with <mark class="important">React templates</mark>.
+* Builds CSS and JS with <mark class="important">Webpack</mark>.
+* Client React works in browser.
+
+<!--
+
+Frontend-wise, the building happens so that React components which work as templates are gathered together with
+webpack. This makes possible to process linked CSS and images. JavaScript works to output the static HTML. Other results
+of the build are CSS to apply to the page and another piece of JavaScript, which is needed for dynamic components. In
+theory, since it is webpack, I can use all kinds of loaders and plugins. For example, it must be possible make it
+very much optimized.
+
+-->
 
 
 ## Pros & cons
@@ -937,16 +1124,30 @@ content/
 
 ### Happy
 
-* Fancy new technologies
+* Overengineering :-) Fancy new technologies
 * Fast building process
 * Not large codebase, open for experiments
-* Getting used to new technologies
-
+* Ready for framework-of-the-week
 
 ### Sad
 
-* Writing a blog and not wiring for the blog :-)
+* Overengineering :-( Writing a blog and not wiring for the blog
 * Solution specific limits
+
+<!--
+
+It had been over a year since I switched the blog into Melatsmith with React, css-modules and Webpack. I am mostly
+happy with this solution. Yes, it sometimes feels as overengineering because the website is so simple. But this was what
+I wanted for playing around. Metalsmith is much faster than Jekyll or Docpad, so that I can stand the building process.
+In general, a blog as a pet project is a very nice idea. It is ye simple, even with all the introduced technologies the
+codebase it not large. It can be easily handled when I am making new experiments with some framework-of-the-week.
+However, there are of course drawbacks. This overengineering results into writing the blog instead of writing for the
+blog. And there are some soltuion specific limits. For example, I would be happy to use styled-components already but
+with current stack it is not that easy as it sounds.
+Anyway, this is not the end. I think that I will refactor it again and again with other static generators. If you have
+ideas, please share it with me.
+
+-->
 
 <style>
 .pros-cons h2 {
@@ -964,6 +1165,10 @@ Varya Stepanova, Intergalactico - Nordcloud Design Studio<br/>
 ### Slides
 
 ### [varya.me/react-finland-2018](http://varya.me/react-finland-2018/)
+
+<!--
+Thank you very much! You can always reach me out in twitter, or in the afterparty.
+-->
 
 <style>
 .thanks h3 {
