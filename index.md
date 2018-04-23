@@ -48,7 +48,7 @@ at Intergalactio - Nordcloud Design Studio</span>
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 #cover {
-  background-image:url('pictures/coding-beach.jpg');
+  background-image:url('pictures/machine.jpg');
   background-size: cover;
   background-position: 0 0, center;
 }
@@ -64,7 +64,7 @@ at Intergalactio - Nordcloud Design Studio</span>
 }
 
 #cover .title {
-  color: #000;
+  color: #FFF;
   font-size: 2.5em;
   font-family: 'Nunito', sans-serif;
   text-align: left;
@@ -728,6 +728,7 @@ this topic has been chosen.
   background-image:url('pictures/chicken-egg.jpg');
   background-size: cover;
   background-position: 0 0, center;
+  background-color: #FDED5B;
 }
 </style>
 
