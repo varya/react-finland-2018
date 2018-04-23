@@ -1079,13 +1079,11 @@ It also gives a lot of control over the files which it processes, and I use it a
 
 ## File structure
 
-```bash
-content/
-  posts/
-    my-awesome-post/
-      index_<mark class="important">en</mark>.md
-      index_<mark class="important">ru</mark>.md
-```
+    content/
+      posts/
+        my-awesome-post/
+          index_<mark class="important">en</mark>.md
+          index_<mark class="important">ru</mark>.md
 
 [http://varya.me/<mark class="important">en</mark>/posts/my-awesome-post/](http://varya.me)<br/>
 [http://varya.me/<mark class="important">ru</mark>/posts/my-awesome-post/](http://varya.me)
