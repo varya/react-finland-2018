@@ -721,13 +721,13 @@ this topic has been chosen.
 
 
 ## How to study new?
-{: .how }
-
-![](pictures/thinkful-cat.svg)
+{: .how .cover }
 
 <style>
-.how img {
-  width: 500px;
+.how {
+  background-image:url('pictures/chicken-egg.jpg');
+  background-size: cover;
+  background-position: 0 0, center;
 }
 </style>
 
@@ -873,6 +873,10 @@ this topic has been chosen.
 </style>
 
 ## January 2017: Metalsmith
+
+* React.js for HTML generation and client interactions
+* css modules for styling
+* Webpack build
 
 <!--
 [Jekyll](https://jekyllrb.com/)<br/>
