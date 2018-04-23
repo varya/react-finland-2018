@@ -1130,7 +1130,7 @@ very much optimized.
 
 ### Sad
 
-* Overengineering :-( Writing a blog and not wiring for the blog
+* Overengineering :-( Writing a blog and not writing for the blog
 * Solution specific limits
 
 <!--
