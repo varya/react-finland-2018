@@ -27,36 +27,62 @@ style: |
 
 # How to use React, webpack and other buzzwords if there is no need  {#cover}
 
+Varya Stepanova
+{: .author }
+
 <div class="title">
 How to use
 
 <span class="logos">
   <img src="pictures/react.png" class="logo react"/>,
-  <img src="pictures/webpack.png" class="logo webpack"/>
+  <img src="pictures/webpack.svg" class="logo webpack"/>
 </span>
 and other
 <span class="buzz">buzzwords</span>
 if there is no need
 </div>
 
-Varya Stepanova, <span class="position">Design Systems Specialist<br/>
-at Intergalactio - Nordcloud Design Studio</span>
-{:.author}
+<!--
+Cover image: http://www.adstasher.com/2013/06/k-y-jelly-love-machines-print-ads.html
+
+-->
 
 <style>
 
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 #cover {
+  text-align: left;
+}
+
+#cover:after {
+  content: '';
   background-image:url('pictures/machine.jpg');
   background-size: cover;
   background-position: 0 0, center;
+  opacity: 0.75;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 #cover:before {
   -webkit-filter: drop-shadow( -2px -2px 2px #000 );
   filter: drop-shadow( -2px -2px 2px #000 );
   text-align: left;
+  width: 156px;
+  height: 27px;
+}
+
+.author {
+  font-size: 24px;
+  margin-top: -5px;
+  display: inline-block;
+  position: absolute;
+  right: 100px;
 }
 
 #cover h2 {
@@ -65,20 +91,22 @@ at Intergalactio - Nordcloud Design Studio</span>
 
 #cover .title {
   color: #FFF;
-  font-size: 2.5em;
+  font-size: 45px;
   font-family: 'Nunito', sans-serif;
-  text-align: left;
+  margin-top: 300px;
+  line-height: 1.5em;
+  text-align: center;
+  -webkit-filter: drop-shadow( -2px -2px 2px #000 );
+  filter: drop-shadow( -2px -2px 2px #000 );
 }
 
 #cover .title .logos {
   white-space: nowrap;
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
 }
 
 #cover .title .logo {
   height: 1.5em;
+  margin-bottom: -20px;
 }
 
 #cover .title .buzz,
@@ -86,13 +114,14 @@ at Intergalactio - Nordcloud Design Studio</span>
     -webkit-animation: cray 6s infinite steps(50);
           animation: cray 6s infinite steps(50);
   display: inline-block;
+  font-size: 1.25em;
+  color: pink;
 }
 @-webkit-keyframes cray {
   2% {
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-    text-transform: capitalize;
   }
   4% {
     font-weight: 600;
@@ -194,7 +223,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 500;
     font-style: italic;
     text-decoration: none;
-    text-transform: capitalize;
   }
   38% {
     font-weight: 200;
@@ -260,13 +288,11 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 100;
     font-style: normal;
     text-decoration: none;
-    text-transform: capitalize;
   }
   60% {
     font-weight: 700;
     font-style: normal;
     text-decoration: none;
-    text-transform: uppercase;
   }
   62% {
     font-weight: 200;
@@ -296,7 +322,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 100;
     font-style: normal;
     text-decoration: line-through;
-    text-transform: uppercase;
   }
   72% {
     font-weight: 300;
@@ -308,7 +333,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 600;
     font-style: normal;
     text-decoration: none;
-    text-transform: capitalize;
   }
   76% {
     font-weight: 600;
@@ -338,13 +362,11 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 200;
     font-style: normal;
     text-decoration: underline;
-    text-transform: capitalize;
   }
   86% {
     font-weight: 600;
     font-style: normal;
     text-decoration: none;
-    text-transform: uppercase;
   }
   88% {
     font-weight: 600;
@@ -368,13 +390,11 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 500;
     font-style: normal;
     text-decoration: line-through;
-    text-transform: capitalize;
   }
   96% {
     font-weight: 300;
     font-style: normal;
     text-decoration: none;
-    text-transform: uppercase;
   }
   98% {
     font-weight: 100;
@@ -388,7 +408,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-    text-transform: capitalize;
   }
   4% {
     font-weight: 600;
@@ -490,7 +509,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 500;
     font-style: italic;
     text-decoration: none;
-    text-transform: capitalize;
   }
   38% {
     font-weight: 200;
@@ -556,13 +574,11 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 100;
     font-style: normal;
     text-decoration: none;
-    text-transform: capitalize;
   }
   60% {
     font-weight: 700;
     font-style: normal;
     text-decoration: none;
-    text-transform: uppercase;
   }
   62% {
     font-weight: 200;
@@ -592,7 +608,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 100;
     font-style: normal;
     text-decoration: line-through;
-    text-transform: uppercase;
   }
   72% {
     font-weight: 300;
@@ -604,7 +619,6 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 600;
     font-style: normal;
     text-decoration: none;
-    text-transform: capitalize;
   }
   76% {
     font-weight: 600;
@@ -634,13 +648,11 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 200;
     font-style: normal;
     text-decoration: underline;
-    text-transform: capitalize;
   }
   86% {
     font-weight: 600;
     font-style: normal;
     text-decoration: none;
-    text-transform: uppercase;
   }
   88% {
     font-weight: 600;
@@ -664,13 +676,11 @@ at Intergalactio - Nordcloud Design Studio</span>
     font-weight: 500;
     font-style: normal;
     text-decoration: line-through;
-    text-transform: capitalize;
   }
   96% {
     font-weight: 300;
     font-style: normal;
     text-decoration: none;
-    text-transform: uppercase;
   }
   98% {
     font-weight: 100;
