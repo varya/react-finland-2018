@@ -1073,6 +1073,7 @@ It also gives a lot of control over the files which it processes, and I use it a
 .tech-stack--metalsmith .css-modules {
   height: 120px;
   margin-right: 50px;
+  margin-bottom: -10px;
 }
 </style>
 
