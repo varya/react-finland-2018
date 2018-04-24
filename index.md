@@ -1091,14 +1091,27 @@ It also gives a lot of control over the files which it processes, and I use it a
 
 <!--
 
-The full control over processing files made helped a lot when dealing with multi-lingual structure of my blog. I write
+The full control over processing files helped a lot when dealing with multi-lingual structure of my blog. I write
 posts in English and Russian, sometimes I translate, and sometimes posts are written in one language only. If the post
 is available in both languages, I prefer to keep the sources together under the same directory. But when rendered into
-the website, it looks much better if the language code works are prefix. Metalsmith gives me to manipulate all the
+the website, it looks much better if the language code works as prefix. Metalsmith gives me to manipulate all the
 files in the stream, and change their location. Also, when generating HTML for a blog post, I can detect if there is
 a translation to the opposite language or not. Then, I provide language switcher if possible.
 
 -->
+
+
+## Development flow
+
+    npm run dev
+
+* Runs development server
+* Builds JavaScript and CSS bundles
+* Generates HTML
+
+<div/>
+
+    npm run build
 
 
 ## Building the frontend
@@ -1110,7 +1123,7 @@ a translation to the opposite language or not. Then, I provide language switcher
 <!--
 
 Frontend-wise, the building happens so that React components which work as templates are gathered together with
-webpack. This makes possible to process linked CSS and images. JavaScript works to output the static HTML. Other results
+webpack. This makes possible to process imported CSS and images. JavaScript works to output the static HTML. Other results
 of the build are CSS to apply to the page and another piece of JavaScript, which is needed for dynamic components. In
 theory, since it is webpack, I can use all kinds of loaders and plugins. For example, it must be possible make it
 very much optimized.
@@ -1138,7 +1151,7 @@ very much optimized.
 It had been over a year since I switched the blog into Melatsmith with React, css-modules and Webpack. I am mostly
 happy with this solution. Yes, it sometimes feels as overengineering because the website is so simple. But this was what
 I wanted for playing around. Metalsmith is much faster than Jekyll or Docpad, so that I can stand the building process.
-In general, a blog as a pet project is a very nice idea. It is ye simple, even with all the introduced technologies the
+In general, a blog as a pet project is a very nice idea. It is yet simple, even with all the introduced technologies the
 codebase it not large. It can be easily handled when I am making new experiments with some framework-of-the-week.
 However, there are of course drawbacks. This overengineering results into writing the blog instead of writing for the
 blog. And there are some soltuion specific limits. For example, I would be happy to use styled-components already but
