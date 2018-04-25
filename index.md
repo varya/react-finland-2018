@@ -1113,22 +1113,41 @@ a translation to the opposite language or not. Then, I provide language switcher
 
     npm run build
 
-
-## Building the frontend
-
-* Generates static HTML with <mark class="important">React templates</mark>.
-* Builds CSS and JS with <mark class="important">Webpack</mark>.
-* Client React works in browser.
-
 <!--
-
 Frontend-wise, the building happens so that React components which work as templates are gathered together with
 webpack. This makes possible to process imported CSS and images. JavaScript works to output the static HTML. Other results
 of the build are CSS to apply to the page and another piece of JavaScript, which is needed for dynamic components. In
 theory, since it is webpack, I can use all kinds of loaders and plugins. For example, it must be possible make it
 very much optimized.
+-->
+
+
+## The Frontend
+{: .frontend }
+
+* React components for SSR
+* React components for browser
+* CSS modules for both
+* ![](pictures/styled-components.png){: .styled-components .next }
+
+<!--
+
+So far, in current stack I use React components for server-side rendering and for browsers. In both, there are CSS
+modules for styling. And I have started it just a couple days ago - there is styled-components for one component yet.
+This is a funny story, I wanted to use styled-components long time and I am actually already using them at work. But in
+the blog I has difficulties and I figured out that it is probably not possible due to some reasons. At the same time
+preparing this talk forced me to fix some inaccurases in webpack configuration. And than I was like "what if I try
+styled-components again?". And it worked! The only reason it sis not work previously was that I actually over-wrote the
+CSS bundle because webpack configuration was wrong. So, maybe the idea for the next talk is "how to master the
+technologies - just annonce a talk about them, then you have no choice but deliver".
 
 -->
+
+<style>
+.frontend .styled-components {
+  height: 250px;
+}
+</style>
 
 
 ## Pros & cons
@@ -1154,8 +1173,8 @@ I wanted for playing around. Metalsmith is much faster than Jekyll or Docpad, so
 In general, a blog as a pet project is a very nice idea. It is yet simple, even with all the introduced technologies the
 codebase it not large. It can be easily handled when I am making new experiments with some framework-of-the-week.
 However, there are of course drawbacks. This overengineering results into writing the blog instead of writing for the
-blog. And there are some soltuion specific limits. For example, I would be happy to use styled-components already but
-with current stack it is not that easy as it sounds.
+blog. And there are some soltuion specific limits. This styled-components story did not happen to me in my work project,
+it was super easy to start using there but not in the blog.
 Anyway, this is not the end. I think that I will refactor it again and again with other static generators. If you have
 ideas, please share it with me.
 
