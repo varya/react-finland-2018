@@ -762,7 +762,7 @@ come up with some pet projects. What could work as such a project?
 </style>
 
 
-## How to study new?
+## Maybe a useful app?
 
 ![](pictures/todo.png)
 
